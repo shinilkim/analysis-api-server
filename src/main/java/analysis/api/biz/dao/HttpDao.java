@@ -1,4 +1,4 @@
-package analysis.api.dao;
+package analysis.api.biz.dao;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

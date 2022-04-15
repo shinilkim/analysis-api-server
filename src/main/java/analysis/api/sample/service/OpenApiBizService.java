@@ -1,4 +1,4 @@
-package analysis.api.biz;
+package analysis.api.sample.service;
 
 import java.util.HashMap;
 import java.util.List;
@@ -10,11 +10,11 @@ import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import analysis.api.dao.HttpDao;
-import analysis.api.dao.MariadbJdbcDao;
+import analysis.api.biz.dao.HttpDao;
+import analysis.api.biz.dao.MariadbJdbcDao;
 
 @Repository
-public class OpenApiService {
+public class OpenApiBizService {
 	
 	@Autowired
 	HttpDao httpDao;
@@ -25,7 +25,7 @@ public class OpenApiService {
 	public static final String API_URL = "https://openapi.gg.go.kr/";
 	public static Map<String,String> serviceKeyMap = new HashMap<>();
 	
-	public OpenApiService() {
+	public OpenApiBizService() {
 		serviceKeyMap.put("Grduemplymtgenrlgdhl", "d1e335be21894375b7b0a15146dcf761");
 	}
 	

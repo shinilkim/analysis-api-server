@@ -1,4 +1,4 @@
-package analysis.api.controller;
+package analysis.api.biz.controller;
 
 public class CrawlerController {
 	public String get(String url) throws Exception{
