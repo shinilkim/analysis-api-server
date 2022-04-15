@@ -1,8 +1,1 @@
-Git Repositories -> 프로젝트명(작업을 원하는 장소) -> Remotes -> Origin 우클릭 -> Change Credentials... 선택
-입력:
-- User: git-hub ID
-- Password: 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
-
-# shinilkim_token
 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
-
