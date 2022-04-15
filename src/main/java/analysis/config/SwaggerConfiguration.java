@@ -47,7 +47,7 @@ public class SwaggerConfiguration {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.consumes(this.getConsumeContentTypes())
                 .produces(this.getProduceContentTypes())
-				.useDefaultResponseMessages(false) // false로 설정하면 Swagger에서 제공해주는 응답코드(200, 401, 403, 404)에 대한 기본 메시지를 제거해준다.
+				.useDefaultResponseMessages(true) // false로 설정하면 Swagger에서 제공해주는 응답코드(200, 401, 403, 404)에 대한 기본 메시지를 제거해준다.
 				.groupName("Sample") // Docket Bean이 한 개일 경우 생략해도 상관없으나, 둘 이상일 경우 충돌을 방지해야 하므로 설정해줘야 한다.
 				.select() // ApiSelectorBuilder를 생성하여 apis()와 paths()를 사용할 수 있게 해준다.
 				.apis(RequestHandlerSelectors.any())

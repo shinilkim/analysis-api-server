@@ -8,12 +8,19 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Repository;
 
 import analysis.api.biz.dao.HttpDao;
 import analysis.api.biz.dao.MariadbJdbcDao;
+import lombok.RequiredArgsConstructor;
 
 @Repository
+@Configuration
+@RequiredArgsConstructor
+@PropertySource("classpath:config/properties/api.properties")
 public class OpenApiBizService {
 	
 	@Autowired
@@ -22,17 +29,20 @@ public class OpenApiBizService {
 	@Autowired
 	MariadbJdbcDao mariadbDao;
 	
+	private final Environment env;
+	
 	public static final String API_URL = "https://openapi.gg.go.kr/";
 	public static Map<String,String> serviceKeyMap = new HashMap<>();
 	
-	public OpenApiBizService() {
-		serviceKeyMap.put("Grduemplymtgenrlgdhl", "d1e335be21894375b7b0a15146dcf761");
-	}
+//	public OpenApiBizService() {
+//		serviceKeyMap.put("Grduemplymtgenrlgdhl", "d1e335be21894375b7b0a15146dcf761");
+//	}
 	
 	public Map<String, Object> get(String apiName, String pIndex, String pSize) throws Exception{
 		String url = API_URL.concat(apiName);
 		Map<String, String> param = new HashMap<>();
-		param.put("KEY", serviceKeyMap.get(apiName));
+		param.put("KEY", env.getProperty("openapi.gg.go.kr.".concat(apiName)));
+//		param.put("KEY", serviceKeyMap.get(apiName));
 		param.put("pIndex", pIndex);
 		param.put("pSize", pSize);
 		

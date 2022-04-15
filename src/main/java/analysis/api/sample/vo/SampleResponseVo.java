@@ -1,4 +1,4 @@
-package analysis.ui.vo.sample;
+package analysis.api.sample.vo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

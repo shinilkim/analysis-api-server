@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.HttpClientErrorException;
 
 import analysis.api.sample.service.OpenApiBizService;
-import analysis.ui.vo.sample.SampleResponseVo;
+import analysis.api.sample.vo.SampleResponseVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
